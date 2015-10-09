@@ -41,17 +41,12 @@ public class Prd5056Test {
     ClassicEngineBoot.getInstance().start();
   }
 
-  @Test
+  @Test(expected = ReportDataFactoryException.class)
   public void testFailWithError() throws Exception {
-    try {
       final KettleDataFactory kettleDataFactory = new KettleDataFactory();
       kettleDataFactory.setQuery( "test", new KettleTransFromFileProducer( QUERY, STEP ) );
       kettleDataFactory.initialize( new DesignTimeDataFactoryContext() );
       TableModel test = kettleDataFactory.queryData( "test", new ReportParameterValues() );
-      Assert.fail();
-    } catch ( ReportDataFactoryException rde ) {
-      logger.debug( "Successfully caught exception", rde );
-    }
   }
 
   @Test
