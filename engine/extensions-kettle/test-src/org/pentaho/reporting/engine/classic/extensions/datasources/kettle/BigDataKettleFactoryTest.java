@@ -17,7 +17,8 @@
 
 package org.pentaho.reporting.engine.classic.extensions.datasources.kettle;
 
-import org.junit.Assert;
+import java.net.URL;
+
 import org.pentaho.reporting.engine.classic.core.DataFactory;
 import org.pentaho.reporting.engine.classic.core.ReportDataFactoryException;
 import org.pentaho.reporting.engine.classic.core.StaticDataRow;
@@ -26,11 +27,7 @@ import org.pentaho.reporting.engine.classic.core.metadata.DataFactoryMetaData;
 import org.pentaho.reporting.engine.classic.core.testsupport.DataSourceTestBase;
 import org.pentaho.reporting.libraries.resourceloader.ResourceException;
 import org.pentaho.reporting.libraries.resourceloader.ResourceKey;
-import org.pentaho.reporting.libraries.resourceloader.ResourceKeyCreationException;
-import org.pentaho.reporting.libraries.resourceloader.ResourceLoadingException;
 import org.pentaho.reporting.libraries.resourceloader.ResourceManager;
-
-import java.net.URL;
 
 public class BigDataKettleFactoryTest extends DataSourceTestBase {
   private static final String QUERY =
